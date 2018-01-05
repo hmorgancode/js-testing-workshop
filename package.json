@@ -1,0 +1,22 @@
+{
+  "name": "js-testing-workshop",
+  "version": "1.0.0",
+  "description": "A workshop on JS + React testing using Jest + Enzyme",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmorgancode/js-testing-workshop.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmorgancode/js-testing-workshop/issues"
+  },
+  "homepage": "https://github.com/hmorgancode/js-testing-workshop#readme",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  }
+}
