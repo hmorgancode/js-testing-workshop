@@ -17,7 +17,8 @@ describe('slightly contrived examples', () => {
   describe('getHelloWorldAfter1Second - with Promises', () => {
     it('should do what it says on the tin', () => {
       expect.assertions(1);
-      return getHelloWorldAfter1Second().then(data => expect(data).toBe('Hello, world!'));
+      // return getHelloWorldAfter1Second().then(data => expect(data).toBe('Hello, world!'));
+      return expect(getHelloWorldAfter1Second()).resolves.toBe('Hello, world!');
     });
   });
 
@@ -25,6 +26,7 @@ describe('slightly contrived examples', () => {
     it('should do what it says on the tin', async () => {
       expect.assertions(1);
       expect(await getHelloWorldAfter1Second()).toBe('Hello, world!');
+      // await expect(getHelloWorldAfter1Second()).resolves.toBe('Hello, world!');
     });
   });
 });
