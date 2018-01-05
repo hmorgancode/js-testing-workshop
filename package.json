@@ -4,7 +4,8 @@
   "description": "A workshop on JS + React testing using Jest + Enzyme",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "install-all": "cd 01_jest_basics/ && npm install && cd ../02_jest_with_reducers/ && npm install && cd ../03_form_component_testing_with_enzyme/ && npm install && cd ../04_modal_component_testing/ && npm install"
   },
   "repository": {
     "type": "git",
