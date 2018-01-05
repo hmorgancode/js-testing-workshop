@@ -1,0 +1,23 @@
+{
+  "name": "02_surprise!_there's_also_redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "actionTypes.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^22.0.4",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.0.4"
+  }
+}
