@@ -42,7 +42,8 @@ describe('handleInputGroupKeyPress', () => {
         key: 'Left'
       };
       handleInputGroupKeyPress(inputs, event);
-      expect(inputs[0].focus).toHaveBeenCalled();
+      // Less decorous version of toHaveBeenCalled()
+      expect(inputs[0].focus.mock.calls.length).toBeGreaterThanOrEqual(1);
     });
 
     it('uses right arrow to go right one input', () => {

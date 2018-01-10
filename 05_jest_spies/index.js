@@ -31,4 +31,6 @@ export function handleInputGroupKeyPress(inputs, event) {
   }
 
   inputs[newIndex].focus();
+
+  // dispatch('Left');
 }

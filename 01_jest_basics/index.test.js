@@ -5,6 +5,11 @@ describe('very contrived examples', () => {
     it('should return the sum of the first two arguments', () => {
       expect(add(1,1)).toBe(2);
     });
+
+    it('should return the sum of the first two arguments (floating-point version)', () => {
+      // 0.2 + 0.1
+      expect(add(0.2, 0.1)).toBeCloseTo(0.3);
+    });
   });
 
   describe('makeArray', () => {
