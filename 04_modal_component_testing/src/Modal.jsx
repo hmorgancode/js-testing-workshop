@@ -14,7 +14,7 @@ class Modal extends React.Component {
   render() {
     const { title, foot } = this.props;
     return (
-      <div className="modal is-active">
+      <div className="modal foo-bar is-active">
         <div className="modal-background js-modal-background" onClick={ this.props.handleCloseModal }></div>
         <div className="modal-card">
           <header className="modal-card-head">

@@ -1,25 +1,34 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { ModalWithoutState as Modal } from './Modal';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 
-function ModalBody() {
-  return <p>Modal Body</p>;
+function ReallyBigDailyMeForm() {
+  return <p>LOTS OF HTML</p>;
 }
 
-// it('renders correctly with react-test-renderer', () => {
-//   const tree = renderer
-//     .create(<Modal><ModalBody /></Modal>)
-//     .toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+it('renders correctly with react-test-renderer', () => {
+  // const tree = renderer
+  //   .create(<Modal><p>sldkfjlsdkjfsdf</p></Modal>)
+  //   .toJSON();
+  // expect(tree).toMatchSnapshot();
+});
 
 describe('Modal', () => {
   it('renders correctly with enzyme', () => {
     // Snapshot testing!
+    // shallow(<Modal />);
+    expect(shallow(<Modal><ReallyBigDailyMeForm /></Modal>)).toMatchSnapshot();
   });
 
   it('closes when the close button is clicked', () => {
+    // todo:
+    // compare toBe and toEqual chai equivs
+    // compare spyOn and jest.fn() to sinon equivs
+    // coverage
+    // react test render, then shallow vs mount vs render
+    // THEN snapshot testing
+    // THEN DOM interactions
   });
 
   it('closes when the area outside of the modal is clicked', () => {
