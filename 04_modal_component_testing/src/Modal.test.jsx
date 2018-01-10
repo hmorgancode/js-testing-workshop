@@ -14,11 +14,12 @@ function ModalBody() {
 //   expect(tree).toMatchSnapshot();
 // });
 
-// test('renders correctly with enzyme', () => {
-//   // Snapshot testing!
-//   expect(shallow(<Modal><ModalBody /></Modal>)).toMatchSnapshot();
-// });
 describe('Modal', () => {
+  it('renders correctly with enzyme', () => {
+    // Snapshot testing!
+    expect(shallow(<Modal><ModalBody /></Modal>)).toMatchSnapshot();
+  });
+
   it('closes when the close button is clicked', () => {
     const mockClose = jest.fn();
     const modal = shallow(<Modal handleCloseModal={mockClose} />);
