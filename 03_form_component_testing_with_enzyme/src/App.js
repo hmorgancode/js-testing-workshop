@@ -11,11 +11,8 @@ class App extends Component {
         <section id="header" className="hero is-info">
           <div className="hero-body container has-text-centered">
             <h1 className="title">
-            what up yo i'm a form
+            MBTA Train Status
             </h1>
-            <h2 className="subtitle">
-
-            </h2>
           </div>
         </section>
 
@@ -23,10 +20,8 @@ class App extends Component {
           <MBTATracker />
         </section>
 
-
         <footer className="footer">
             <div className="content has-text-centered">
-              <p><strong>This text is bold</strong> i like messing with styles okay </p>
             </div>
         </footer>
       </div>

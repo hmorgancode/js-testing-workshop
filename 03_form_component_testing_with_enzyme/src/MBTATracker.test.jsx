@@ -1,5 +1,27 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import MBTATracker from './MBTATracker';
+import MBTAServer from './MBTAServer';
 
+describe('MBTATracker', () => {
+  describe('City text input', () => {
 
+  });
 
-// setState to populate state instead of repeating input.
-// (be wary of setState- it can lead you to states that aren't possible via user interaction)
+  describe('Train line select input', () => {
+
+  });
+
+  describe('Terms and conditions checkbox', () => {
+
+  });
+
+  describe('submit button', () => {
+    it('makes a request to the server on form submission', () => {
+
+    });
+    it('displays the results modal upon receiving a response', () => {
+
+    });
+  });
+});

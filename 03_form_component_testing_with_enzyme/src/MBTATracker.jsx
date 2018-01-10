@@ -1,12 +1,38 @@
 import React from 'react';
-// import { fetch } from './MBTAServer';
+import { ModalWithoutState as Modal } from './Modal';
+import MBTAServer from './MBTAServer';
 // import axios from 'axios';
-// import PressRelease from './PressRelease';
 
 class MBTATracker extends React.Component {
 
   state = {
-    city: ''
+    trainStatus: null,
+    showModal: false,
+
+    city: '',
+    selectedTrain: 'Blue Line',
+    agreedToTerms: false,
+  }
+
+  handleSubmit = () => {
+    MBTAServer.fetch().then((result) => {
+      this.setState({ trainStatus: result, showModal: true })
+    });
+  }
+
+  renderModal = () => {
+    if (!this.state.showModal) {
+      return null;
+    }
+
+    return (
+      <Modal
+        title={`${this.state.selectedTrain} status:`}
+        handleCloseModal={() => this.setState({ trainStatus: null, showModal: false })}
+      >
+        <p>{this.state.trainStatus}</p>
+      </Modal>
+    );
   }
 
   render() {
@@ -15,7 +41,14 @@ class MBTATracker extends React.Component {
       <div className="field">
         <label className="label">City</label>
         <div className="control has-icons-left has-icons-right" style={{ width: '20rem'}}>
-          <input className="input" type="text" placeholder="Text input" value={this.state.city} />
+          { /******** INPUT 1 *********/}
+          <input
+            className="input"
+            type="text"
+            placeholder="Text input"
+            value={this.state.city}
+            onChange={(e) => this.setState({ city: e.target.value })}
+          />
           <span className="icon is-small is-left">
             <i className="fa fa-user"></i>
           </span>
@@ -29,7 +62,11 @@ class MBTATracker extends React.Component {
         <label className="label">Train</label>
         <div className="control">
           <div className="select">
-            <select>
+            { /******** INPUT 2 *********/}
+            <select
+              value={this.state.selectedTrain}
+              onChange={(e) => this.setState({ selectedTrain: e.target.value })}
+            >
               <option>Blue Line</option>
               <option>Commuter Rail (any)</option>
               <option>Green Line - B</option>
@@ -47,20 +84,24 @@ class MBTATracker extends React.Component {
       <div className="field">
         <div className="control">
           <label className="checkbox">
-            <input type="checkbox" />
-            I agree to the <a href="#foo">terms and conditions</a>
+            { /******** INPUT 3 *********/}
+            <input
+              type="checkbox"
+              checked={this.state.agreedToTerms}
+              onChange={(e) => this.setState({ agreedToTerms: e.target.checked})}
+            />
+            I agree to the <a href="#nope">terms and conditions</a>
           </label>
         </div>
       </div>
 
       <div className="control">
-        <button className="button is-primary">Submit</button>
+        <button className="button is-primary" onClick={this.handleSubmit}>Check Train Status</button>
       </div>
+
+      { this.renderModal() }
     </div>
   )}
-  // form to register
-  //
-  // form asking you to select your train
 }
 
 export default MBTATracker;
