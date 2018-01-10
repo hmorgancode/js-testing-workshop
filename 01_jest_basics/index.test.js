@@ -1,7 +1,6 @@
 import { add, makeArray, getHelloWorldAfter1Second } from '.';
 
-describe('slightly contrived examples', () => {
-
+describe('very contrived examples', () => {
   describe('add', () => {
     it('should return the sum of the first two arguments', () => {
       expect(add(1,1)).toBe(2);
